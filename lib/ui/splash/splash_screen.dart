@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_taste/ui/_core/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tech_taste/ui/home/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -28,7 +29,8 @@ class SplashScreen extends StatelessWidget {
                       color: AppColors.textSecondary,
                     ),
                   ),
-                  Text("Flavors that code your happiness",
+                  Text(
+                    "Flavors that code your happiness",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
@@ -48,8 +50,18 @@ class SplashScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  onPressed: () {},
-                  child: Text("Get Started", style: TextStyle(color: AppColors.text),),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Get Started",
+                    style: TextStyle(color: AppColors.text),
+                  ),
                 ),
               ),
             ],
